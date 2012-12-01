@@ -1,0 +1,43 @@
+#barra-brasil { 
+    position:relative;
+    clear:both;
+    overflow:hidden;
+    background: #00500F url(../images/barra_nova/barra-brasil-v3-bgx.png) center bottom no-repeat;
+}
+
+#barra-brasil .barra {
+    display: block;
+    width: 960px;
+    height:28px;
+    margin: 0 auto;
+    overflow:hidden;
+    background:transparent url(../images/barra_nova/barra-brasil-v3-bgx.gif) 0 bottom repeat-x; 
+    text-align:-99999px
+}
+
+#barra-brasil .barra ul {
+    float:right;
+    width: 319px;
+    list-style-type:none
+}
+
+#barra-brasil .barra ul li {
+    float: left;
+    padding-left: 25px;
+}
+
+#barra-brasil .ai {
+    display: block;
+    width: 161px;
+    height: 28px;
+    text-indent: -1000px;
+    background: #00500F url(../images/barra_nova/ai.png) no-repeat 0 4px;
+}
+
+#barra-brasil .brasilgov {
+    display: block;
+    width: 108px;
+    height: 28px;
+    text-indent: -1000px;
+    background: #00500F url(../images/barra_nova/brasil.png) no-repeat 0 4px;
+}

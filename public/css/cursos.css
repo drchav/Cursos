@@ -1,0 +1,175 @@
+#body {
+background-color: #FFF;
+margin-top: 0px;
+margin-right: 0px;
+margin-left: 0px;
+}
+
+#topo {
+width: 100%;
+text-align: left;
+font-family: Arial;
+font-size: 10px;
+color: #000;
+padding-left: 0px;
+padding-top: 5px;
+padding-bottom: 5px;
+background-image: url(../images/cursos/topo_verde.png);
+background-color: transparent;
+background-position: right top;
+background-repeat: no-repeat;    
+margin-top:-37px;
+width: 1060px; /*1040*/
+height: 200px;
+}
+#topo_esq {
+background-position: left top;
+background-color: #3aa53a;
+background-repeat: repeat-x;
+padding: 0 0 0 0;
+width: 50%;
+height: 37px;
+}
+#topo_dir {
+background-position: right top;
+background-color: #3aa53a;
+background-repeat: repeat-x;
+padding: 0 0px;
+width: 50%;
+height: 37px;
+margin-left: 1000px;
+margin-top:-37px;
+}
+#topo_logo {
+float: left;
+text-align: left;
+width: 980px; /*960*/
+height: 114px;
+margin-top: 47px;
+margin-left: 40px;
+}
+#logo {
+margin-top: -27px;
+}
+#topo_topo {
+margin-top: -100px;
+margin-left: 240px;
+width: 520px;
+height: 120px;
+vertical-align: top;
+}
+#topo_topo .normal{
+font-variant: small-caps;
+font-family: Tahoma;
+color: #FFF;
+font-size: 21px;
+}
+#topo_topo .negrito{
+font-variant: small-caps;
+font-family: Tahoma;
+color: #FFF;
+font-size: 24px;
+font-weight: bold;
+}
+#topo_mapa {
+margin-top: -120px;
+margin-left: 760px; /*740*/
+width: 240px;
+vertical-align: top;
+}
+#guia {
+background-image: url(../images/cursos/guia_cursos.jpg);
+background-repeat: no-repeat;
+width: 760px;
+height: 80px;
+margin-top: -33px;
+margin-left: -540px;
+padding-bottom:0px;
+}
+#conteudo {
+font-family: Verdana;
+width: 982px; /*982*/
+height: 100%;
+margin-top: 45px; /*0*/
+padding-left: 40px;
+padding-right: 40px;
+text-align: left;
+vertical-align: top;
+}
+#titulo{font-size: 12px; font-weight: bold;}
+#descricao{font-size: 11px; padding-right: 18px;}
+#conteudo_menu {
+font-size: 12px;
+color: #333;
+font-weight: bold;
+-webkit-border-top-left-radius: 10px;
+-webkit-border-top-right-radius: 10px;
+-moz-border-radius-topleft: 10px;
+-moz-border-radius-topright: 10px;
+border-top-left-radius: 10px;
+border-top-right-radius: 10px;
+width: 200px;
+height: 100%;
+margin-top: 0px;
+text-align: left;
+vertical-align: top;
+background-color: #E5E5E5;
+padding-top: 10px;
+padding-left: 10px;
+padding-right: 10px;
+padding-bottom: 10px;
+}
+#conteudo_centro {
+width: 510px; /*540*/
+height: 100%;
+margin-top: 0px;
+text-align: left;
+margin-left: 200px;
+vertical-align: top;
+padding-top: 10px; /*tudo 10px*/
+padding-left: 10px;
+padding-right: 10px;
+padding-bottom: 10px;
+}
+#conteudo_imagens {
+font-size: 12px;
+color: #095224;
+font-weight: bold;
+-webkit-border-top-left-radius: 10px;
+-webkit-border-top-right-radius: 10px;
+-moz-border-radius-topleft: 10px;
+-moz-border-radius-topright: 10px;
+border-top-left-radius: 10px;
+border-top-right-radius: 10px;
+width: 200px;
+height: 100%;
+margin-top: 0px;
+text-align: left;
+margin-left: 760px;
+vertical-align: top;
+background-color: #E5E5E5;
+padding-top: 10px;
+padding-left: 10px;
+padding-right: 10px;
+padding-bottom: 10px;
+}
+
+#rodape {
+font-family: Verdana;
+font-size: 10px;
+color: #000;
+-webkit-border-bottom-right-radius: 10px;
+-webkit-border-bottom-left-radius: 10px;
+-moz-border-radius-bottomright: 10px;
+-moz-border-radius-bottomleft: 10px;
+border-bottom-right-radius: 10px;
+border-bottom-left-radius: 10px;
+width: 978px;
+height: 100%;
+margin-top: 0px;
+margin-right: 0px;
+margin-left: 0px;
+text-align: center;
+vertical-align: top;
+background-color: #E5E5E5;
+}

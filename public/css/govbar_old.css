@@ -1,0 +1,94 @@
+/*div:after, ol:after, form:after, ul:after, dl:after { DIV PARA TABLE LESS*/
+/*    content:".";*/
+/*    display:block;*/
+/*    clear:both;*/
+/*    visibility:hidden;*/
+/*    height:0;*/
+/*    overflow:hidden;*/
+/*    }*/
+
+/* CSS DA BARRA DE TAMANHO MÍNIMO */
+
+	#barra-brasil-v2 {
+		width: 800px;
+		height: 36px;
+		float: none;
+		clear: right;
+		margin: 0;
+		padding: 0;
+	}
+	
+	#barra-brasil-v2.png {
+		background: url(../images/barra_antiga/barra-gov-bv2-minimo.png) no-repeat left top;
+	}
+	
+	#barra-brasil-v2 img {
+		border: 0;
+	}
+	
+	#barra-brasil-v2 #logo-republica-bv2 {
+		display: block;
+		float: left;
+		margin: 0;
+		padding: 5px 0 0 30px;
+	}
+	
+	#barra-brasil-v2 #logo-gov-bv2 {
+		display: block;
+		float: right;
+		margin: 0;
+		padding: 5px 21px 0 0;
+	}
+    
+/* CSS DA BARRA DE TAMANHO EXPANSÍVEL */
+    
+    #barra-brasil-v2-exp {
+		width: 100%;
+		height: 36px;
+		float: none;
+		clear: right;
+		margin: 0;
+		padding: 0;
+    }
+    
+	#barra-brasil-v2-exp img {
+		border: 0;
+	}
+    
+    #barra-brasil-v2-exp.png {
+		background: url(../images/barra_antiga/barra-gov-bv2-esq.png) no-repeat left top;
+	}
+    
+    #barra-brasil-v2-exp.png {
+		background: url(../images/barra_antiga/barra-gov-bv2-dir.png) no-repeat right top;
+    }
+	
+	#barra-brasil-v2-exp.png .divCentro {
+		background: url(../images/barra_antiga/barra-gov-bv2-centro.png) no-repeat right top #074d21;
+	}
+    
+    #barra-brasil-v2-exp .divEsq {
+        float:left;
+	}
+    
+    #barra-brasil-v2-exp .divCentro {
+        margin-left: 16px;
+        margin-right: 15px;
+        width: auto;
+		height: 36px;
+	}
+    
+	#barra-brasil-v2-exp #logo-republica-bv2 {
+		display: block;
+		float: left;
+		margin: 0;
+		padding: 6px 0 0 14px;
+	}
+    
+	#barra-brasil-v2-exp #logo-gov-bv2 {
+		display: block;
+		float: right;
+		margin: 0;
+		padding: 5px 6px 0 0;
+	}
+

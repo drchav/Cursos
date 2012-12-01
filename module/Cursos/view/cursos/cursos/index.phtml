@@ -1,0 +1,255 @@
+<div id="topo_esq"></div>
+<div id="topo_dir"></div>
+	<div align="center">
+		<div id="topo">
+			<div id="topo_logo"><div id="logo">
+			<img src="images/cursos/marca_ifsc.png"/>
+			</div>
+	<div id="topo_topo">
+<table>
+	<tr>
+	<td class="normal">
+	Curso  echo $nomenivel  em:
+	</td>
+	</tr>
+	<tr>
+	<td class="negrito">
+	 echo $nomecurso 
+	</td>
+	</tr>
+</table>
+</div>
+<div id="topo_mapa"><img src="images/cursos/mapas/6.png"/>	
+
+	<div id="guia">
+		<iframe id="blockrandom" name="" src="http://localhost/cursos/select_campi.html" width="100%" height="100px" scrolling="no" frameborder="0" class="wrapper">
+		</iframe>
+	</div>
+
+</div>
+</div>
+</div>
+<div id="conteudo">
+<table>
+<tr>
+<td id="conteudo_menu">
+<div>
+<p>
+<a style="text-decoration: none; color: #095224;" href="pagina1a.php?idcurso= echo $cursoid ">O que é o Curso?
+<br/><br/></a> 
+<a style="text-decoration: none; color: #095224;" href="pagina1b.php?idcurso= echo $cursoid ">Mercado de Trabalho
+<br/><br/></a>
+<a style="text-decoration: none; color: #095224;" href="pagina1c.php?idcurso= echo $cursoid ">Certificação
+<br/><br/></a> 
+<a style="text-decoration: none; color: #095224;" href="pagina1d.php?idcurso= echo $cursoid ">Infraestrutura
+<br/><br/></a> 
+<a style="text-decoration: none; color: #095224;" href="pagina1e.php?idcurso= echo $cursoid ">Projetos de Pesquisa e Extensão
+<br/><br/></a>
+</p>
+</div>
+</td>
+<td id="conteudo_centro">
+<div>
+<table>
+<tr>
+<td width="15px">
+</td>
+<td id="titulo" width="475px">
+<p>O que é o Curso?</p>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<img src="images/cursos/linha-verde.png" border="0" width="490px" height="8px">
+</td>
+</tr>
+<tr>
+<td width="15px">
+</td>
+<td align="justify" id="descricao" width="475px">
+<p> AQUI: echo $this->escapeHtml($curso->id_curso);?>
+    echo $this->escapeHtml($curso->nome);?>
+    echo $this->escapeHtml($curso->nome_campus);?>
+    echo $this->escapeHtml($curso->mapa);?> <br/><br/>
+<b><a target="_blank" style="color: #000;" href="projetospedagogicos/ echo $projetopedagogico ">ORGANIZAÇÃO CURRICULAR</a></b><br/><br/></p>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+</td>
+</tr>
+</table>
+<table>
+<tr>
+<td width="15px">
+</td>
+<td id="titulo" width="475px">
+<p>Vagas Ofertadas</p>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<img src="images/cursos/linha-verde.png" border="0" width="490px" height="8px">
+</td>
+</tr>
+<tr>
+<td width="15px">
+</td>
+<td id="descricao" width="475px">
+<p> echo $vagas  por semestre<br/><br/></p>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+</td>
+</tr>
+</table>
+<table>
+<tr>
+<td width="15px">
+</td>
+<td id="titulo" width="475px">
+<p>Período e Duração</p>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<img src="images/cursos/linha-verde.png" border="0" width="490px" height="8px">
+</td>
+</tr>
+<tr>
+<td width="15px">
+</td>
+<td id="descricao" width="475px">
+<p> foreach($periodo as $periodos){echo "$periodos, ";}  echo $duracaosemestre  semestre(s)<br/><br/></p>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+</td>
+</tr>
+</table>
+<table>
+<tr>
+<td width="15px">
+</td>
+<td id="titulo" width="475px">
+<p>Carga Horária</p>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<img src="images/cursos/linha-verde.png" border="0" width="490px" height="8px">
+</td>
+</tr>
+<tr>
+<td width="15px">
+</td>
+<td id="descricao" width="475px">
+<p> echo $cargahoraria h/aula.<br/><br/></p>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+</td>
+</tr>
+</table>
+<table>
+<tr>
+<td width="15px">
+</td>
+<td id="titulo" width="475px">
+<p>Ingresso</p>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<img src="images/cursos/linha-verde.png" border="0" width="490px" height="8px">
+</td>
+</tr>
+<tr>
+<td width="15px">
+</td>
+<td align="justify" id="descricao" width="475px">
+<p> echo nl2br("$ingresso") <br/><br/></p>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+</td>
+</tr>
+</table>
+<table>
+<tr id="contato">
+<td colspan="2">
+<img src="images/cursos/contato_verde.png"/>
+</td>
+</tr>
+<tr>
+<td width="15px">
+</td>
+<td id="descricao" width="475px">
+<p>
+<b>Coordenador do Curso: </b><br/> echo $coordenadorcurso <br/>
+<b>Email: </b> echo $emailcurso <br/>
+<b>Telefone: </b> echo $telefonecurso <br/>
+<b>Local e Informações: </b><br/> echo nl2br("$localcurso") 
+<br/><br/>
+</p>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td id="conteudo_imagens">
+<div>
+  <table>
+  <tr> 
+   <td><a style="text-decoration:none;" target="_blank" href="imagens/echo $imagem " title="Ampliar em nova janela"><img style='color: #095224; text-decoration: none; border: 2px #095224 solid' width='200px' src='http://curso.ifsc.edu.br/imagens/3619203d466461a70829d7c7e3e6944f.jpeg'/></a><br /></td>
+  </tr>
+  </table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="rodape">
+		<table style="width: 980px">
+			<tr>
+				<td rowspan="3" style="width: 106px"><a target="_blank" href="http://ifsc.edu.br"><img src="images/cursos/marca_ifsc_rodape.png" alt="IF-SC" border="0"/></a>
+				</td>
+				<td style="width: 700px">
+				</td>
+				<td rowspan="3" style="width: 174px"><a target="_blank" href="http://mec.gov.br"><img src="images/cursos/marca_mec_rodape.png" alt="MEC" border="0"/></a>
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 700px" align="center">
+					<table style="width: 100%" align="center">
+						<tr>
+							<td align="center"><font color="#000">
+							<a style="color: #000" target="_blank" href="http://ifsc.edu.br">
+							portal do IFSC</a></font></td>
+							<td align="center"><font color="#000">
+							<a style="color: #000" target="_blank" href="http://aluno.ifsc.edu.br">
+							portal do aluno</a></font></td>
+							<td align="center"><font color="#000">
+							<a style="color: #000" target="_blank" href="http://periodicos.ifsc.edu.br">
+							portal de peri&oacute;dicos</a></font></td>
+							<td align="center"><font color="#000">
+							<a style="color: #000" target="_blank" href="http://ingresso.ifsc.edu.br">
+							departamento de ingresso</a></font></td>
+						</tr>
+					</table>
+					<hr size="1" color="#000" align="center">
+				</td>
+			</tr>
+		    
+			</tr>
+		</table>
+</div>
+</div>

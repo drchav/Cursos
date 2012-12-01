@@ -1,0 +1,83 @@
+html, .wp-dialog {
+  background-color: #F9F9F9;
+}
+
+/*body{*/
+/*  color: #333333;*/
+/*  font: 11px "Lucida Grande",Verdana,Arial,"Bitstream Vera Sans",sans-serif;*/
+/*  padding-top: 0px;*/
+/*  margin: 0;*/
+/*}*/
+
+#login {
+  margin: 10em auto;
+  width: 336px;
+}
+
+form {
+  background: none repeat scroll 0 0 #FFFFFF;
+  border: 1px solid #E5E5E5;
+  border-radius: 11px 11px 11px 11px;
+  box-shadow: 0 4px 18px #C8C8C8;
+  font-weight: normal;
+  margin-left: 8px;
+  padding: 16px 16px 40px;
+}
+
+label {
+  color: #777777;
+  font-size: 13px;
+}
+
+body form .input {
+  background: none repeat scroll 0 0 #FBFBFB;
+  border: 1px solid #E5E5E5;
+  font-size: 24px;
+  margin-bottom: 16px;
+  margin-right: 6px;
+  margin-top: 2px;
+  padding: 3px;
+  width: 97%;
+}
+
+h1{
+  margin-top:0px;
+}
+
+h1 a {
+  background: url("../images/login_portal_professor.png") no-repeat scroll center top transparent;
+  display: block;
+  height: 67px;
+  overflow: hidden;
+  padding-bottom: 15px;
+  text-indent: -9999px;
+  width: 295px;
+}
+
+h1 a.portal-aluno{
+  background: url("../images/login_portal_aluno.png") no-repeat scroll center top transparent;
+}
+
+input.button{
+  border-color: #298CBA;
+  color: #FFFFFF;
+  font-weight: bold;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+  border: 1px solid;
+  border-radius: 11px 11px 11px 11px;
+  cursor: pointer;
+  font-family: "Lucida Grande",Verdana,Arial,"Bitstream Vera Sans",sans-serif;
+  font-size: 12px;
+  margin-top: -3px;
+  padding: 3px 10px;
+  text-decoration: none;
+  float:right;
+}
+
+input.professor{
+  background-color:#89a02c;
+}
+
+input.aluno{
+  background-color:#0088aa;
+}
