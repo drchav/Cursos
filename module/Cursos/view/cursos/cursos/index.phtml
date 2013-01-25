@@ -3,26 +3,26 @@
 	<div align="center">
 		<div id="topo">
 			<div id="topo_logo"><div id="logo">
-			<img src="images/cursos/marca_ifsc.png"/>
+			<img src="../images/cursos/marca_ifsc.png"/>
 			</div>
 	<div id="topo_topo">
 <table>
 	<tr>
 	<td class="normal">
-	Curso  echo $nomenivel  em:
+	<?php echo $this->escapeHtml($cursosData->nome_nivel);?>
 	</td>
 	</tr>
 	<tr>
 	<td class="negrito">
-	 echo $nomecurso 
+	 <?php echo $this->escapeHtml($cursosData->nome);?>
 	</td>
 	</tr>
 </table>
 </div>
-<div id="topo_mapa"><img src="images/cursos/mapas/6.png"/>	
+<div id="topo_mapa"><img src="../images/cursos/mapas/<?php echo $this->escapeHtml($cursosData->mapa_nome_arquivo);?>"/>	
 
 	<div id="guia">
-		<iframe id="blockrandom" name="" src="http://localhost/cursos/select_campi.html" width="100%" height="100px" scrolling="no" frameborder="0" class="wrapper">
+		<iframe id="blockrandom" name="" src="http://curso.ifsc.edu.br/cursos/select_campi.html" width="100%" height="100px" scrolling="no" frameborder="0" class="wrapper">
 		</iframe>
 	</div>
 
@@ -60,18 +60,16 @@
 </tr>
 <tr>
 <td colspan="2">
-<img src="images/cursos/linha-verde.png" border="0" width="490px" height="8px">
+<img src="../images/cursos/linha-verde.png" border="0" width="490px" height="8px">
 </td>
 </tr>
 <tr>
 <td width="15px">
 </td>
 <td align="justify" id="descricao" width="475px">
-<p> AQUI: echo $this->escapeHtml($curso->id_curso);?>
-    echo $this->escapeHtml($curso->nome);?>
-    echo $this->escapeHtml($curso->nome_campus);?>
-    echo $this->escapeHtml($curso->mapa);?> <br/><br/>
-<b><a target="_blank" style="color: #000;" href="projetospedagogicos/ echo $projetopedagogico ">ORGANIZAÇÃO CURRICULAR</a></b><br/><br/></p>
+<p>
+<?php echo $this->escapeHtml($cursosData->descricao);?>
+<b><a target="_blank" style="color: #000;" href="<?php echo $this->escapeHtml($cursosData->projeto_pedagogico);?>">ORGANIZAÇÃO CURRICULAR</a></b><br/><br/></p>
 </td>
 </tr>
 <tr>
@@ -89,14 +87,14 @@
 </tr>
 <tr>
 <td colspan="2">
-<img src="images/cursos/linha-verde.png" border="0" width="490px" height="8px">
+<img src="../images/cursos/linha-verde.png" border="0" width="490px" height="8px">
 </td>
 </tr>
 <tr>
 <td width="15px">
 </td>
 <td id="descricao" width="475px">
-<p> echo $vagas  por semestre<br/><br/></p>
+<p><?php echo $this->escapeHtml($cursosData->vagas);?> vagas por semestre<br/><br/></p>
 </td>
 </tr>
 <tr>
@@ -114,14 +112,14 @@
 </tr>
 <tr>
 <td colspan="2">
-<img src="images/cursos/linha-verde.png" border="0" width="490px" height="8px">
+<img src="../images/cursos/linha-verde.png" border="0" width="490px" height="8px">
 </td>
 </tr>
 <tr>
 <td width="15px">
 </td>
 <td id="descricao" width="475px">
-<p> foreach($periodo as $periodos){echo "$periodos, ";}  echo $duracaosemestre  semestre(s)<br/><br/></p>
+<p><?php echo $this->escapeHtml($cursosData->duracao_semestral);?> semestre(s)<br/><br/></p>
 </td>
 </tr>
 <tr>
@@ -139,14 +137,14 @@
 </tr>
 <tr>
 <td colspan="2">
-<img src="images/cursos/linha-verde.png" border="0" width="490px" height="8px">
+<img src="../images/cursos/linha-verde.png" border="0" width="490px" height="8px">
 </td>
 </tr>
 <tr>
 <td width="15px">
 </td>
 <td id="descricao" width="475px">
-<p> echo $cargahoraria h/aula.<br/><br/></p>
+<p> <?php echo $this->escapeHtml($cursosData->carga_horaria);?>horas<br/><br/></p>
 </td>
 </tr>
 <tr>
@@ -164,14 +162,14 @@
 </tr>
 <tr>
 <td colspan="2">
-<img src="images/cursos/linha-verde.png" border="0" width="490px" height="8px">
+<img src="../images/cursos/linha-verde.png" border="0" width="490px" height="8px">
 </td>
 </tr>
 <tr>
 <td width="15px">
 </td>
 <td align="justify" id="descricao" width="475px">
-<p> echo nl2br("$ingresso") <br/><br/></p>
+<p><?php echo $this->escapeHtml($cursosData->forma_ingresso);?><br/><br/></p>
 </td>
 </tr>
 <tr>
@@ -182,7 +180,7 @@
 <table>
 <tr id="contato">
 <td colspan="2">
-<img src="images/cursos/contato_verde.png"/>
+<img src="../images/cursos/contato_verde.png"/>
 </td>
 </tr>
 <tr>
@@ -190,10 +188,10 @@
 </td>
 <td id="descricao" width="475px">
 <p>
-<b>Coordenador do Curso: </b><br/> echo $coordenadorcurso <br/>
-<b>Email: </b> echo $emailcurso <br/>
-<b>Telefone: </b> echo $telefonecurso <br/>
-<b>Local e Informações: </b><br/> echo nl2br("$localcurso") 
+<b>Coordenador do Curso: </b><?php echo $this->escapeHtml($cursosData->coordenador);?><br/>
+<b>Email: </b>  <?php echo $this->escapeHtml($cursosData->email);?> <br/>
+<b>Telefone: </b> <?php echo $this->escapeHtml($cursosData->telefone);?>  <br/>
+<b>Local e Informações: </b><br/> <?php echo $this->escapeHtml($cursosData->local);?>
 <br/><br/>
 </p>
 </td>
@@ -209,7 +207,11 @@
 <div>
   <table>
   <tr> 
-   <td><a style="text-decoration:none;" target="_blank" href="imagens/echo $imagem " title="Ampliar em nova janela"><img style='color: #095224; text-decoration: none; border: 2px #095224 solid' width='200px' src='http://curso.ifsc.edu.br/imagens/3619203d466461a70829d7c7e3e6944f.jpeg'/></a><br /></td>
+   <td><a style="text-decoration:none;" target="_blank" href=""
+	  title="Ampliar em nova janela"><img style='color: #095224; text-decoration: none; border: 2px #095224 solid' width='200px'
+	  src='http://curso.ifsc.edu.br/imagens/3619203d466461a70829d7c7e3e6944f.jpeg'/>
+	</a><br />
+   </td>
   </tr>
   </table>
 </div>
@@ -220,11 +222,11 @@
 <div id="rodape">
 		<table style="width: 980px">
 			<tr>
-				<td rowspan="3" style="width: 106px"><a target="_blank" href="http://ifsc.edu.br"><img src="images/cursos/marca_ifsc_rodape.png" alt="IF-SC" border="0"/></a>
+				<td rowspan="3" style="width: 106px"><a target="_blank" href="http://ifsc.edu.br"><img src="../images/cursos/marca_ifsc_rodape.png" alt="IF-SC" border="0"/></a>
 				</td>
 				<td style="width: 700px">
 				</td>
-				<td rowspan="3" style="width: 174px"><a target="_blank" href="http://mec.gov.br"><img src="images/cursos/marca_mec_rodape.png" alt="MEC" border="0"/></a>
+				<td rowspan="3" style="width: 174px"><a target="_blank" href="http://mec.gov.br"><img src="../images/cursos/marca_mec_rodape.png" alt="MEC" border="0"/></a>
 				</td>
 			</tr>
 			<tr>

@@ -37,14 +37,54 @@ class Module
                     $table = new CursosTable($tableGateway);
                     return $table;
                 },
-                'cursosTableGateway' => function ($sm) {
-                    $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
-                    $resultSetPrototype = new ResultSet();
-                    $resultSetPrototype->setArrayObjectPrototype(new Cursos());
-                    return new TableGateway('view', $dbAdapter, null, $resultSetPrototype);
-                },
+                    'cursosTableGateway' => function ($sm) {
+                        $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
+                        $resultSetPrototype = new ResultSet();
+                        $resultSetPrototype->setArrayObjectPrototype(new Cursos());
+                        return new TableGateway('cursos', $dbAdapter, null, $resultSetPrototype);
+                    },
+//                'Cursos\Model\CursosCampus' =>  function($sm) {
+//                    $tableGateway = $sm->get('cursosCampusGateway');
+//                    $table = new CursosTable($tableGateway);
+//                    return $table;
+//                },
+//                    'cursosCampusGateway' => function ($sm) {
+//                        $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
+//                        $resultSetPrototype = new ResultSet();
+//                        $resultSetPrototype->setArrayObjectPrototype(new Cursos());
+//                        return new TableGateway('campus', $dbAdapter, null, $resultSetPrototype);
+//                    },
+//                'Cursos\Model\CursosNiveis' =>  function($sm) {
+//                    $tableGateway = $sm->get('cursosNivelGateway');
+//                    $table = new CursosTable($tableGateway);
+//                    return $table;
+//                },
+//                    'cursosNivelGateway' => function ($sm) {
+//                        $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
+//                        $resultSetPrototype = new ResultSet();
+//                        $resultSetPrototype->setArrayObjectPrototype(new Cursos());
+//                        return new TableGateway('niveis', $dbAdapter, null, $resultSetPrototype);
+//                    },  
             ),
         );
+//        return array(
+//	    
+//	    'initializers' => array(
+//		function ($instance, $sm) {
+//		    if ($instance instanceof \Zend\Db\Adapter\AdapterAwareInterface) {
+//			$instance->setDbAdapter($sm->get('Zend\Db\Adapter\Adapter'));
+//		    }
+//		}
+//	    ),
+//            
+//            'factories' => array(
+//                'Cursos\Model\CursosNiveis' =>  function($sm){
+//		    $CursosTable = new Model\SampleTable();
+//		    return $CursosTable;
+//                },
+//            ),
+//            
+//        );
     }
 }
 

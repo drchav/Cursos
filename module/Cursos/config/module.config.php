@@ -13,7 +13,7 @@ return array(
                 'type'    => 'segment',
                 'options' => array(
                     'route'	=> '/cursos[/:action][/:id]',
-		  //'route'	=> '/cursos[/:campus][/:nivel][/:curso]',
+		  //'route'	=> '/cursos[/:campus][/:nivel][/:id]',
                     'constraints' => array(
                         'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
                         'id'     => '[0-9]+',
@@ -38,4 +38,19 @@ return array(
 	//  'curso' => __DIR__ . '/../view',
         ),
     ),
+     // Doctrine configuration (does'n work, yet)
+    'doctrine' => array(
+        'driver' => array(
+            __NAMESPACE__ . '_driver' => array(
+                'class' => 'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
+                'cache' => 'array',
+                'paths' => array(__DIR__ . '/../src/' . __NAMESPACE__ . '/Entity')
+            ),
+            'orm_default' => array(
+                'drivers' => array(
+                    __NAMESPACE__ . '\Entity' => __NAMESPACE__ . '_driver'
+                )
+            )
+        )
+    )
 );

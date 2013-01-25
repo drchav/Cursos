@@ -14,9 +14,10 @@
 return array(
     'db' => array(
         'driver'         => 'Pdo',
-        'dsn'            => 'mysql:dbname=cursos;host=localhost',
+        'dsn'            => 'mysql:dbname=PortalCursos;host=localhost',
         'driver_options' => array(
             PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''
+            ,//Zend_Db::AUTO_QUOTE_IDENTIFIERS => false
         ),
     ),
     'service_manager' => array(

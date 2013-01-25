@@ -1,0 +1,13 @@
+html, body, form {
+            padding: 0px;
+            margin: 0px;
+        }
+body {
+            margin: 1em;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+		}
+table {
+            background-image: url('../images/cursos/guia_cursos.jpg');
+            background-repeat: no-repeat;
+            background-position: top center;			
+}

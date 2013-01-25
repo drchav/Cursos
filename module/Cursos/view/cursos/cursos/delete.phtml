@@ -1,0 +1,24 @@
+<?php
+
+$title = 'Cursos: Deletar';
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+
+<p>Você tem certeza que deseja excluir permanentemente o Curso: 
+    '<?php echo $this->escapeHtml($cursos->nome); ?>' do 
+    '<?php echo $this->escapeHtml($cursos->nome_campus); ?>'?
+</p>
+<?php
+$url = $this->url('cursos', array(
+        'action' => 'delete',
+        'id'     => $this->id,
+));
+?>
+<form action="<?php echo $url; ?>" method="post">
+<div>
+    <input type="hidden" name="id" value="<?php echo (int) $cursos->id; ?>" />
+    <input type="submit" name="del" value="Sim" />
+    <input type="submit" name="del" value="Não" />
+</div>
+</form>

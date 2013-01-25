@@ -1,9 +1,9 @@
 <?php echo $this->doctype(); ?>
 
-<html lang="en">
+<html lang="pt_BR">
     <head>
         <meta charset="utf-8">
-        <?php echo $this->headTitle('ZF2 '. $this->translate('Skeleton Application'))->setSeparator(' - ')->setAutoEscape(false) ?>
+        <?php echo $this->headTitle($this->translate('Portal de Cursos'))->setSeparator(' - ')->setAutoEscape(false) ?>
 
         <?php echo $this->headMeta()->appendName('viewport', 'width=device-width, initial-scale=1.0') ?>
 
@@ -19,6 +19,7 @@
         <!-- Scripts -->
         <?php echo $this->headScript()->prependFile($this->basePath() . '/js/html5.js', 'text/javascript', array('conditional' => 'lt IE 9',))
                                       ->prependFile($this->basePath() . '/js/bootstrap.min.js')
+                                      ->prependFile($this->basePath() . '/js/list.js')
                                       ->prependFile($this->basePath() . '/js/jquery.min.js') ?>
 
     </head>
@@ -62,7 +63,11 @@
             <?php echo $this->content; ?>
             <hr>
             <footer>
-                <p>Todos os direitos reservados @ Diretoria de Tecnologia da Informação e Comunicação - Coordenadoria de Sistemas &copy; IF-SC 2012</p>
+                <!--<a target="_blank" href="http://ifsc.edu.br">Portal do IFSC</a>
+		<a target="_blank" href="http://aluno.ifsc.edu.br">Portal do Aluno</a>
+		<a target="_blank" href="http://periodicos.ifsc.edu.br">Portal de Periódicos</a>
+		<a target="_blank" href="http://ingresso.ifsc.edu.br">Departamento de Ingresso</a>-->
+                <p>Todos os direitos reservados @ Diretoria de Tecnologia da Informação e Comunicação - Coordenadoria de Sistemas; Desenvolvido por Farleir Luís Minozzo &copy; IF-SC 2013</p>
             </footer>
         </div> <!-- /container -->
         <?php echo $this->inlineScript() ?>

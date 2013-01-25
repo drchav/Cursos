@@ -1,36 +1,46 @@
 <?php
-
-$title = 'Cursos IF-SC';
+//var_dump($cursosList);
+$title = 'Portal de Cursos';
 $this->headTitle($title);
 ?>
 <h1><?php echo $this->escapeHtml($title); ?></h1>
 <p>
-    <a href="<?php echo $this->url('cursos', array('action'=>'add'));?>" class="btn btn-success">Adicionar Curso</a>
-</p>
+    </p>
 
 <table class="table">
 <tr>
     <th>Id</th>
     <th>Curso</th>
+    <th>Carga Horária</th>
+    <th>Duração</th>
+    <th>Turno</th>
+    <th>Vagas</th>
     <th>Coordenador</th>
     <th>E-mail</th>
     <th>Telefone</th>
-    <th>&nbsp;</th>
+    <th>
+        <a href="<?php echo $this->url('cursos', array('action'=>'add'));?>" class="btn btn-success">Adicionar Curso
+        </a>
+    </th>
+    
 </tr>
-<?php foreach ($cursosList as $curso) : ?>
+<?php foreach ($cursosGrid as $curso) : ?>
 <tr>
     <td><?php echo $this->escapeHtml($curso->id);?></td>
     <td><?php echo $this->escapeHtml($curso->nome);?></td>
-    <td><?php echo $this->escapeHtml($curso->coordenadorcurso);?></td>
-    <td><?php echo $this->escapeHtml($curso->emailcurso);?></td>
-    <td><?php echo $this->escapeHtml($curso->telefonecurso);?></td>
+    <td><?php echo $this->escapeHtml($curso->carga_horaria);?> horas</td>
+    <td><?php echo $this->escapeHtml($curso->duracao_semestral);?> semestres</td>
+    <td><?php echo $this->escapeHtml($curso->turno);?></td>
+    <td><?php echo $this->escapeHtml($curso->vagas);?></td>
+    <td><?php echo $this->escapeHtml($curso->coordenador);?></td>
+    <td><?php echo $this->escapeHtml($curso->email);?></td>
+    <td><?php echo $this->escapeHtml($curso->telefone);?></td>
     <td>
         <a href="<?php echo $this->url('cursos',
-            array('action'=>'edit', 'id' => $cursos->id));?>" class="btn btn-mini btn-primary"><i class="icon-pencil"></i> Editar</a></a>
-    </td>
-    <td>
+            array('action'=>'edit', 'id' => $curso->id));?>" class="btn btn-mini btn-primary"><i class="icon-pencil"></i> Editar</a></a>
+    
         <a href="<?php echo $this->url('cursos',
-            array('action'=>'delete', 'id' => $cursos->id));?>"class="btn btn-mini btn-danger"><i class="icon-trash"></i> Deletar</a>
+            array('action'=>'delete', 'id' => $curso->id));?>"class="btn btn-mini btn-danger"><i class="icon-trash"></i> Deletar</a>
     </td>
 </tr>
 <?php endforeach; ?>
