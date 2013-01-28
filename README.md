@@ -19,7 +19,6 @@ PHP 5.3+
 
 Apache2 + ModReWrite
 
-
 Acesso
 ------------
 http://localhost/zend/public/cursos/1 (front end)
