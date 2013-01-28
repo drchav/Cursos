@@ -25,8 +25,8 @@ return array(
                 'params' => array(
                     'host'     => 'localhost',
                     'port'     => '3306',
-                    'user'     => 'root',
-                    'password' => '123456',
+                    'user'     => 'user_do_banco',
+                    'password' => 'senha_do_banco',
                     'dbname'   => 'portaldecursos',
                 )
             )
