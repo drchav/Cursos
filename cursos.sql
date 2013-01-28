@@ -1,8 +1,3 @@
--- phpMyAdmin SQL Dump
--- version 3.4.10.1deb1
--- http://www.phpmyadmin.net
---
--- Servidor: localhost
 -- Tempo de Geração: 24/01/2013 às 19h59min
 -- Versão do Servidor: 5.5.28
 -- Versão do PHP: 5.4.9-4~precise+1
