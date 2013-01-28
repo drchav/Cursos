@@ -13,8 +13,8 @@
 
 return array(
     'db' => array(
-        'username' => 'root',
-        'password' => '123456',
+        'username' => 'user_do_banco',
+        'password' => 'senha_do_banco',
     ),
     
 // Doctrine configuration (added 03/12/12) NOT WORKING YET------------------
