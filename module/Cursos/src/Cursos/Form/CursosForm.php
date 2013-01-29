@@ -85,7 +85,7 @@ class CursosForm extends Form
                 'type'  => 'text',
             ),
             'options' => array(
-                'label' => 'E-Mail: ',
+                'label' => 'E-Mail:',
             ),
         ));
                        $this->add(array(
@@ -94,7 +94,7 @@ class CursosForm extends Form
                 'type'  => 'text',
             ),
             'options' => array(
-                'label' => 'Telefone: ',
+                'label' => 'Telefone:',
             ),
         ));
         $this->add(array(
