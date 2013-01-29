@@ -6,14 +6,14 @@ return array(
             'Cursos\Controller\Cursos' => 'Cursos\Controller\CursosController',
         ),
     ),
-// The following section is new and should be added to your file
+
     'router' => array(
         'routes' => array(
             'cursos' => array(
                 'type'    => 'segment',
                 'options' => array(
                     'route'	=> '/cursos[/:action][/:id]',
-		  //'route'	=> '/cursos[/:campus][/:nivel][/:id]',
+		  //'route'	=> '/cursos[/:campus][/:nivel][/:id]', //IDEIA FUTURA
                     'constraints' => array(
                         'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
                         'id'     => '[0-9]+',
@@ -33,12 +33,12 @@ return array(
     'view_manager' => array(
         'template_path_stack' => array(
             'cursos' => __DIR__ . '/../view',
-	//  'campus' => __DIR__ . '/../view',
+	//  'campus' => __DIR__ . '/../view', //SERA NECESSARIO?
 	//  'nivel' => __DIR__ . '/../view',
 	//  'curso' => __DIR__ . '/../view',
         ),
     ),
-     // Doctrine configuration (does'n work, yet)
+     // Doctrine configuration (Não Funciona, ainda)
     'doctrine' => array(
         'driver' => array(
             __NAMESPACE__ . '_driver' => array(
