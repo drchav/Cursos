@@ -8,9 +8,11 @@ use Cursos\Model\Cursos;
 use Cursos\Form\CursosForm;
 
 class CursosController extends AbstractActionController
-//        implements \Zend\Db\Adapter\AdapterAwareInterface 
+//        implements \Zend\Db\Adapter\AdapterAwareInterface //teste
 {
-//    protected $CursosTable = 'cursos';
+    
+//   TESTE PARA TABLEGATEWAY DINAMICO
+//    protected $CursosTable = 'cursos'; 
 //
 //    public function setDbAdapter(Adapter $adapter)
 //    {
@@ -24,7 +26,7 @@ class CursosController extends AbstractActionController
     public function indexAction()
     {
 	$id = (int)$this->params('id');
-        //TODO if $id=null then goto some front page wihout error.
+        //TODO if $id=null or =0 deveria ir para uma página inicial e não retornar erro.
         return new ViewModel(array(
             'cursosData' => $this->getCursosTable()->getCursos($id),
 	));
@@ -37,8 +39,8 @@ class CursosController extends AbstractActionController
             'cursosNiveis' => $this->getCursosNiveis()->fetchAll(),
             'cursosList' => $this->getCursosTable()->fetchAll(),
         ));
-        $viewModel->setTerminal(true);// Turn off the layout, i.e. only render the view script.
-        return $viewModel;        
+        $viewModel->setTerminal(true);// Desliga o Layout, ou seja, somente rendeniza a View.
+        return $viewModel; // Lembre-se, você DEVE retornar sempre ViewModel() em toda Action!      
     }
     
     public function adminAction()
