@@ -17,7 +17,7 @@ class Cursos implements InputFilterAwareInterface
     public $descricao;
 //    public $area_atuacao;
 //    public $duracao_semestral;
-//    public $turno;
+    public $turno;
 //    public $vagas;
 //    public $coordenador;
 //    public $email;
@@ -47,7 +47,7 @@ class Cursos implements InputFilterAwareInterface
         $this->descricao = (isset($data['descricao'])) ? $data['descricao'] : null;
 //        $this->area_atuacao = (isset($data['area_atuacao'])) ? $data['area_atuacao'] : null;
 //        $this->duracao_semestral = (isset($data['duracao_semestral'])) ? $data['duracao_semestral'] : null;
-//        $this->turno = (isset($data['turno'])) ? $data['turno'] : null;
+        $this->turno = (isset($data['turno'])) ? $data['turno'] : null;
 //        $this->vagas = (isset($data['vagas'])) ? $data['vagas'] : null;
 //        $this->coordenador = (isset($data['coordenador'])) ? $data['coordenador'] : null;
 //        $this->email = (isset($data['email'])) ? $data['email'] : null;
@@ -107,6 +107,25 @@ class Cursos implements InputFilterAwareInterface
 
             $inputFilter->add($factory->createInput(array(
                 'name'     => 'descricao',
+                'required' => true,
+                'filters'  => array(
+                    array('name' => 'StripTags'),
+                    array('name' => 'StringTrim'),
+                ),
+                'validators' => array(
+                    array(
+                        'name'    => 'StringLength',
+                        'options' => array(
+                            'encoding' => 'UTF-8',
+                            'min'      => 1,
+                            'max'      => 1000,
+                        ),
+                    ),
+                ),
+            )));
+            
+            $inputFilter->add($factory->createInput(array(
+                'name'     => 'turno',
                 'required' => true,
                 'filters'  => array(
                     array('name' => 'StripTags'),

@@ -53,7 +53,7 @@ class CursosTable
             'descricao' => $cursos->descricao,
 //            'area_atuacao' => $cursos->area_atuacao,
 //            'duracao_semestral' => $cursos->duracao_semestral,
-//            'turno' => $cursos->turno,
+            'turno' => $cursos->turno,
 //            'vagas' => $cursos->vagas,
 //            'coordenador' => $cursos->coordenador,
 //            'email' => $cursos->email,
