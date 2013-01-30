@@ -13,7 +13,7 @@ class Cursos implements InputFilterAwareInterface
     public $id_campus;
     public $id_nivel;
     public $nome;
-//    public $carga_horaria;
+    public $carga_horaria;
     public $descricao;
 //    public $area_atuacao;
 //    public $duracao_semestral;
@@ -43,7 +43,7 @@ class Cursos implements InputFilterAwareInterface
         $this->id_campus = 1; //(isset($data['id_campus'])) ? $data['id_campus'] : null;
         $this->id_nivel = 1;//(isset($data['id_campus'])) ? $data['id_campus'] : null;
         $this->nome = (isset($data['nome'])) ? $data['nome'] : null;
-//        $this->carga_horaria = (isset($data['carga_horaria'])) ? $data['carga_horaria'] : null;
+        $this->carga_horaria = (isset($data['carga_horaria'])) ? $data['carga_horaria'] : null;
         $this->descricao = (isset($data['descricao'])) ? $data['descricao'] : null;
 //        $this->area_atuacao = (isset($data['area_atuacao'])) ? $data['area_atuacao'] : null;
 //        $this->duracao_semestral = (isset($data['duracao_semestral'])) ? $data['duracao_semestral'] : null;
@@ -134,6 +134,11 @@ class Cursos implements InputFilterAwareInterface
                 'validators' => array(
                     array(
                         'name'    => 'EmailAddress',
+                        'options' => array(
+                            'messages' => array( 
+                                'emailAddressInvalidFormat'
+                                    => 'E-mail escrito de forma inválida'),
+                        ),
                     ),
                 ),
             )));

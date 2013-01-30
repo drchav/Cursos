@@ -17,4 +17,8 @@ return array(
             './vendor',
         ),
     ),
+    'module_layouts' => array(
+        'Application' => 'layout/application',
+        'Zfcuser'     => 'layout/user',
+    ),
 );

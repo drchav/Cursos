@@ -25,17 +25,17 @@ class CursosTable
     {
         $select = new \Zend\Db\Sql\Select ;
         $select->from('cursos');
-        $select->where(array('cursos.id_nivel'=>$id));
+        $select->where(array('cursos.id'=>$id));
         $select->join('niveis', 'cursos.id_nivel = niveis.id_nivel');
         $select->join('campus', 'cursos.id_campus = campus.id_campus');
         //$select->join('imagens', 'cursos.id_nivel = imagens.id_imagem'); //Imagens precisarão de um select separado.
-        $select->join('infraestruturas', 'cursos.id = infraestruturas.id_infraestrutura');
+        //$select->join('infraestruturas', 'cursos.id = infraestruturas.id_infraestrutura');
         //echo $select->getSqlString();
         $resultSet = $this->tableGateway->selectWith($select);
         
         $row = $resultSet->current();
         if (!$row) {
-            throw new \Exception("Não foi encontrado o Curso $id");
+            throw new \Exception("Não foi encontrado o Curso com ID = $id");
             //TODO: if $row=null then goto some frontpage wihout error.
         }
         //var_dump($resultSet);
