@@ -134,20 +134,24 @@ INSERT INTO `niveis` (`id_nivel`, `nome_nivel`) VALUES
 -- Estrutura da tabela `usuarios`
 --
 
-CREATE TABLE IF NOT EXISTS `usuarios` (
-  `id_usuario` int(5) NOT NULL,
-  `login` varchar(255) NOT NULL,
-  `senha` varchar(33) NOT NULL,
-  UNIQUE KEY `login` (`login`),
-  KEY `fk_usuarios_cursos_idx` (`id_usuario`)
+CREATE TABLE IF NOT EXISTS user
+(
+    user_id       INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    username      VARCHAR(255) DEFAULT NULL UNIQUE,
+    email         VARCHAR(255) DEFAULT NULL UNIQUE,
+    display_name  VARCHAR(50) DEFAULT NULL,
+    password      VARCHAR(128) NOT NULL,
+    state         SMALLINT,
+    UNIQUE KEY `username` (`username`),
+    KEY `fk_usuarios_cursos_idx` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `usuarios`
 --
 
-INSERT INTO `usuarios` (`id_usuario`, `login`, `senha`) VALUES
-(1, 'admin', '21232f297a57a5a743894a0e4a801fc3');
+INSERT INTO `user` (`user_id`,`email`, `username`, `display_name`, `password`) VALUES
+(1, 'teste@if.edu.br','admin','Senha: 123mudar','$2y$14$rZZVY6y/MEUpvmHVj12zl.TYCyHUBdzuaopQ4FsTQzIX5vqYaU75G');
 
 --
 -- Restrições para as tabelas dumpadas
