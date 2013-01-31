@@ -16,7 +16,7 @@ Requisitos
 
 MySQL 5+
 
-PHP 5.3+
+PHP 5.3+ (recomendado 5.4)
 
 Apache2 com ModReWrite ativado
 
@@ -36,14 +36,15 @@ http://localhost/zend/public/user/login (access)
 Instalação
 ----------------------------
 
-Baixe toda a aplicação e execute o cursos.sql em seu banco de dados.
+Baixe toda a aplicação e execute o data/cursos.sql em seu banco de dados.
+
 Não esqueça de mudar o conector e senha do banco em config/autoload/local.php
 
 Obs.: Mantenha o core do Zend2 atualizado com os comandos:
 
-zend$ php composer.phar self-update
+~/zend$ php composer.phar self-update
 
-zend$ php composer.phar update
+~/zend$ php composer.phar update
 
 
 Acesso
