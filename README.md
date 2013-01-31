@@ -1,5 +1,4 @@
 
-
 Portal de Cursos
 =======================
 
@@ -19,9 +18,10 @@ MySQL 5+
 
 PHP 5.3+
 
-Apache2 + ModReWrite
+Apache2 com ModReWrite ativado
 
-Acesso
+
+Funcionalidades
 ------------
 http://localhost/zend/public/cursos/1 (front end)
 
@@ -29,12 +29,15 @@ http://localhost/zend/public/cursos/list (iFrame)
 
 http://localhost/zend/public/cursos/admin (back end)
 
+http://localhost/zend/public/user/login (access)
+
 
 
 Instalação
 ----------------------------
 
-Baixe toda a aplicação e execute o cursos.sql em seu banco
+Baixe toda a aplicação e execute o cursos.sql em seu banco de dados.
+Não esqueça de mudar o conector e senha do banco em config/autoload/local.php
 
 Obs.: Mantenha o core do Zend2 atualizado com os comandos:
 
@@ -43,7 +46,7 @@ zend$ php composer.phar self-update
 zend$ php composer.phar update
 
 
-Virtual Host
+Acesso
 ------------
 Para maior comodidade ative um virtual host para a pasta "public".
 
