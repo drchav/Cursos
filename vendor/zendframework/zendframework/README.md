@@ -1,66 +1,19 @@
-### Welcome to the *Zend Framework 2.1* Release!
+### Welcome to the *Zend Framework 2.2* Release!
 
 Master: [![Build Status](https://secure.travis-ci.org/zendframework/zf2.png?branch=master)](http://travis-ci.org/zendframework/zf2)
 Develop: [![Build Status](https://secure.travis-ci.org/zendframework/zf2.png?branch=develop)](http://travis-ci.org/zendframework/zf2)
 
 ## RELEASE INFORMATION
 
-*Zend Framework 2.1.0*
+*Zend Framework 2.2.2*
 
-This is the first minor (feature) release for the version 2 series.
+This is the second maintenance release for the 2.2 series.
 
-29 Jan 2013
+24 Jul 2013
 
-### UPDATES IN 2.1.0
+### UPDATES IN 2.2.2
 
-#### Backwards Compatibility Break: Session Storage
-
-The default session storage object has changed from
-`Zend\Session\Storage\SessionStorage` to an array adapter
-(`Zend\Session\Storage\SessionArrayStorage`; this is a minimal break in
-compatibility.  Most developers are not working directly with the storage
-object, but rather a `Zend\Session\Container`; as a result, switching out the
-default will not cause compatibility problems for most developers.
-
-The change was introduced to alleviate issues when working with 3rd party
-libraries that access nested members of the `$_SESSION` superglobal.
-
-Those affected will be those (a) directly accessing the storage instance, and
-(b) using object notation to access session members:
-
-```php
-    $foo = null;
-
-    /** @var $storage Zend\Session\Storage\SessionStorage */
-    if (isset($storage->foo)) {
-        $foo = $storage->foo;
-    }
-```
-
-If you are using array notation, as in the following example, your code remains
-forwards compatible:
-
-```php
-    $foo = null;
-
-    /** @var $storage Zend\Session\Storage\SessionStorage */
-    if (isset($storage['foo'])) {
-        $foo = $storage['foo'];
-    }
-```
-
-If you are not working directly with the storage instance, you will be
-unaffected.
-
-For those affected, the following courses of action are possible:
-
-- Update your code to replace object property notation with array notation, OR
-- Initialize and register a `Zend\Session\Storage\SessionStorage` object
-  explicitly with the session manager instance.
-
-#### Other updates in 2.1.0
-
-Please see CHANGELOG.md.
+Please see [CHANGELOG.md](CHANGELOG.md).
 
 ### SYSTEM REQUIREMENTS
 
@@ -69,12 +22,12 @@ latest PHP version whenever possible.
 
 ### INSTALLATION
 
-Please see INSTALL.md.
+Please see [INSTALL.md](INSTALL.md).
 
 ### CONTRIBUTING
 
 If you wish to contribute to Zend Framework, please read both the
-CONTRIBUTING.md and README-GIT.md file.
+[CONTRIBUTING.md](CONTRIBUTING.md) and [README-GIT.md](README-GIT.md) file.
 
 ### QUESTIONS AND FEEDBACK
 
@@ -97,7 +50,7 @@ the fw-announce mailing list by sending a blank message to
 ### LICENSE
 
 The files in this archive are released under the Zend Framework license.
-You can find a copy of this license in LICENSE.txt.
+You can find a copy of this license in [LICENSE.txt](LICENSE.txt).
 
 ### ACKNOWLEDGEMENTS
 

@@ -5,8 +5,8 @@ return array(
         //'DoctrineModule', 
         //'DoctrineORMModule', 
 	'Cursos',
-        'ZfcBase',
-        'ZfcUser',
+        //'ZfcBase',
+        //'ZfcUser',
     ),
     'module_listener_options' => array(
         'config_glob_paths'    => array(
@@ -19,6 +19,6 @@ return array(
     ),
     'module_layouts' => array(
         'Application' => 'layout/application',
-        'Zfcuser'     => 'layout/user',
+        //'Zfcuser'     => 'layout/user',
     ),
 );

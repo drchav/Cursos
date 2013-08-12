@@ -69,6 +69,13 @@ class Collection extends Fieldset implements FieldsetPrepareAwareInterface
     protected $templatePlaceholder = self::DEFAULT_TEMPLATE_PLACEHOLDER;
 
     /**
+     * Whether or not to create new objects during modify
+     *
+     * @var bool
+     */
+    protected $createNewObjects = false;
+
+    /**
      * Element used as a template
      *
      * @var ElementInterface|FieldsetInterface
@@ -84,7 +91,7 @@ class Collection extends Fieldset implements FieldsetPrepareAwareInterface
      * - should_create_template: if set to true, a template is generated (inside a <span>)
      * - template_placeholder: placeholder used in the data template
      *
-     * @param array|\Traversable $options
+     * @param array|Traversable $options
      * @return Collection
      */
     public function setOptions($options)
@@ -115,6 +122,10 @@ class Collection extends Fieldset implements FieldsetPrepareAwareInterface
             $this->setTemplatePlaceholder($options['template_placeholder']);
         }
 
+        if (isset($options['create_new_objects'])) {
+            $this->setCreateNewObjects($options['create_new_objects']);
+        }
+
         return $this;
     }
 
@@ -133,7 +144,7 @@ class Collection extends Fieldset implements FieldsetPrepareAwareInterface
      * Set the object used by the hydrator
      * In this case the "object" is a collection of objects
      *
-     * @param  array|\Traversable $object
+     * @param  array|Traversable $object
      * @return Fieldset|FieldsetInterface
      * @throws Exception\InvalidArgumentException
      */
@@ -156,7 +167,7 @@ class Collection extends Fieldset implements FieldsetPrepareAwareInterface
     /**
      * Populate values
      *
-     * @param array|\Traversable $data
+     * @param array|Traversable $data
      * @throws \Zend\Form\Exception\InvalidArgumentException
      * @throws \Zend\Form\Exception\DomainException
      * @return void
@@ -232,6 +243,10 @@ class Collection extends Fieldset implements FieldsetPrepareAwareInterface
                 get_class($this)
                 )
             );
+        }
+
+        if (! $this->createNewObjects()) {
+            $this->replaceTemplateObjects();
         }
     }
 
@@ -418,6 +433,24 @@ class Collection extends Fieldset implements FieldsetPrepareAwareInterface
     }
 
     /**
+     * @param bool $createNewObjects
+     * @return Collection
+     */
+    public function setCreateNewObjects($createNewObjects)
+    {
+        $this->createNewObjects = (bool) $createNewObjects;
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function createNewObjects()
+    {
+        return $this->createNewObjects;
+    }
+
+    /**
      * Get a template element used for rendering purposes only
      *
      * @return null|ElementInterface|FieldsetInterface
@@ -477,6 +510,12 @@ class Collection extends Fieldset implements FieldsetPrepareAwareInterface
                 $targetElement = clone $this->targetElement;
                 $targetElement->object = $value;
                 $values[$key] = $targetElement->extract();
+                if (! $this->createNewObjects() && $this->has($key)) {
+                    $fieldset = $this->get($key);
+                    if ($fieldset instanceof Fieldset && $fieldset->allowObjectBinding($value)) {
+                        $fieldset->setObject($value);
+                    }
+                }
             }
         }
 
@@ -529,5 +568,27 @@ class Collection extends Fieldset implements FieldsetPrepareAwareInterface
         $elementOrFieldset->setName($this->templatePlaceholder);
 
         return $elementOrFieldset;
+    }
+
+    /**
+     * Replaces the default template object of a sub element with the corresponding
+     * real entity so that all properties are preserved.
+     *
+     * @return void
+     */
+    protected function replaceTemplateObjects()
+    {
+        $fieldsets = $this->getFieldsets();
+
+        if (!count($fieldsets) || !$this->object) {
+            return;
+        }
+
+        foreach ($fieldsets as $fieldset) {
+            $i = $fieldset->getName();
+            if (isset($this->object[$i])) {
+                $fieldset->setObject($this->object[$i]);
+            }
+        }
     }
 }

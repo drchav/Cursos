@@ -3,7 +3,7 @@
  * Zend Framework (http://framework.zend.com/)
  *
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
- * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright Copyright (c) 2005-2013 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
  */
 
@@ -11,6 +11,7 @@ namespace Zend\Form;
 
 use Zend\ServiceManager\AbstractPluginManager;
 use Zend\ServiceManager\ConfigInterface;
+use Zend\ServiceManager\ServiceLocatorInterface;
 use Zend\Stdlib\InitializableInterface;
 
 /**
@@ -36,6 +37,7 @@ class FormElementManager extends AbstractPluginManager
         'dateselect'    => 'Zend\Form\Element\DateSelect',
         'datetime'      => 'Zend\Form\Element\DateTime',
         'datetimelocal' => 'Zend\Form\Element\DateTimeLocal',
+        'datetimeselect' => 'Zend\Form\Element\DateTimeSelect',
         'element'       => 'Zend\Form\Element',
         'email'         => 'Zend\Form\Element\Email',
         'fieldset'      => 'Zend\Form\Fieldset',
@@ -84,7 +86,15 @@ class FormElementManager extends AbstractPluginManager
     public function injectFactory($element)
     {
         if ($element instanceof FormFactoryAwareInterface) {
-            $element->setFormFactory(new Factory($this));
+            $factory = $element->getFormFactory();
+            $factory->setFormElementManager($this);
+
+            if ($this->serviceLocator instanceof ServiceLocatorInterface
+                && $this->serviceLocator->has('InputFilterManager')
+            ) {
+                $inputFilters = $this->serviceLocator->get('InputFilterManager');
+                $factory->getInputFilterFactory()->setInputFilterManager($inputFilters);
+            }
         }
     }
 
